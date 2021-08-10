@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TransactionController">
+   <children>
+      <VBox>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" visible="false">
+                     <children>
+                        <Label text="BudgetBuddy" />
+                        <Label text="-" />
+                        <Label text="Add Transaction" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets left="5.0" top="5.0" />
+                     </padding></HBox>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox spacing="5.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label text="Date: " />
+                  <DatePicker fx:id="datePickerMain" minWidth="127.0" prefWidth="127.0" />
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Location: " />
+                        <ComboBox fx:id="comboBoxLocationMain" minWidth="127.0" promptText="Select" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Category:" />
+                        <ComboBox fx:id="comboBoxCategoryMain" maxWidth="200.0" minWidth="127.0" onAction="#actionCategorySelectMain" promptText="Select" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Sub-Category" />
+                        <ComboBox fx:id="comboBoxSubCategoryMain" minWidth="127.0" promptText="Select" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Amount:" />
+                        <TextField fx:id="textFieldAmountMain" minWidth="127.0" promptText="0.00" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Member:" />
+                        <ComboBox fx:id="comboBoxMemberMain" minWidth="127.0" promptText="Select" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Procurement:" />
+                        <ComboBox fx:id="comboBoxProcurementMain" minWidth="127.0" promptText="Select" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <VBox fx:id="boxSplitOne" alignment="CENTER">
+                     <children>
+                        <Label text=" " />
+                        <Button fx:id="buttonSplitOne" minWidth="127.0" mnemonicParsing="false" onAction="#actionSplitOne" text="Split Receipt" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </VBox>
+                  <HBox fx:id="boxDetailsOne" alignment="CENTER" spacing="5.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Category:" />
+                              <ComboBox fx:id="comboBoxCategoryOne" minWidth="127.0" onAction="#actionCategorySelectOne" promptText="Select" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Sub-Category" />
+                              <ComboBox fx:id="comboBoxSubCategoryOne" minWidth="127.0" promptText="Select" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Amount:" />
+                              <TextField fx:id="textFieldAmountOne" minWidth="127.0" promptText="0.00" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Member:" />
+                              <ComboBox fx:id="comboBoxMemberOne" minWidth="127.0" promptText="Select" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <VBox fx:id="boxCancelOne" alignment="CENTER_LEFT" prefWidth="150.0">
+                     <children>
+                        <Label text=" " />
+                        <Button fx:id="buttonCancelSplitOne" minWidth="127.0" mnemonicParsing="false" onAction="#actionCancelSplitOne" text="Cancel Split" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="69.0">
+               <children>
+                  <VBox fx:id="boxSplitTwo" alignment="CENTER">
+                     <children>
+                        <Label text=" " />
+                        <Button fx:id="buttonSplitTwo" minWidth="127.0" mnemonicParsing="false" onAction="#actionSplitTwo" text="Split Receipt" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </VBox>
+                  <HBox fx:id="boxDetailsTwo" alignment="CENTER" spacing="5.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Category:" />
+                              <ComboBox fx:id="comboBoxCategoryTwo" minWidth="127.0" onAction="#actionCategorySelectTwo" promptText="Select" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Sub-Category" />
+                              <ComboBox fx:id="comboBoxSubCategoryTwo" minWidth="127.0" promptText="Select" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Amount:" />
+                              <TextField fx:id="textFieldAmountTwo" minWidth="127.0" promptText="0.00" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Member:" />
+                              <ComboBox fx:id="comboBoxMemberTwo" minWidth="127.0" promptText="Select" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <VBox fx:id="boxCancelTwo" alignment="CENTER_LEFT" prefWidth="150.0">
+                     <children>
+                        <Label text=" " />
+                        <Button fx:id="buttonCancelSplitTwo" minWidth="127.0" mnemonicParsing="false" onAction="#actionCancelSplitTwo" text="Cancel Split" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="127.0">
+               <children>
+                  <VBox fx:id="boxSplitThree" alignment="CENTER">
+                     <children>
+                        <Label text=" " />
+                        <Button fx:id="buttonSplitThree" minWidth="127.0" mnemonicParsing="false" onAction="#actionSplitThree" text="Split Receipt" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </VBox>
+                  <HBox fx:id="boxDetailsThree" alignment="CENTER" spacing="5.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Category:" />
+                              <ComboBox fx:id="comboBoxCategoryThree" minWidth="127.0" onAction="#actionCategorySelectThree" promptText="Select" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Sub-Category" />
+                              <ComboBox fx:id="comboBoxSubCategoryThree" minWidth="127.0" promptText="Select" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Amount:" />
+                              <TextField fx:id="textFieldAmountThree" minWidth="127.0" promptText="0.00" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Member:" />
+                              <ComboBox fx:id="comboBoxMemberThree" minWidth="127.0" promptText="Select" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <VBox fx:id="boxCancelThree" alignment="CENTER_LEFT" prefWidth="150.0">
+                     <children>
+                        <Label text=" " />
+                        <Button fx:id="buttonCancelSplitThree" minWidth="127.0" mnemonicParsing="false" onAction="#actionCancelSplitThree" text="Cancel Split" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="186.0">
+               <children>
+                  <VBox fx:id="boxSplitFour" alignment="CENTER">
+                     <children>
+                        <Label text=" " />
+                        <Button fx:id="buttonSplitFour" minWidth="127.0" mnemonicParsing="false" onAction="#actionSplitFour" text="Split Receipt" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </VBox>
+                  <HBox fx:id="boxDetailsFour" alignment="CENTER" spacing="5.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Category:" />
+                              <ComboBox fx:id="comboBoxCategoryFour" minWidth="127.0" onAction="#actionCategorySelectFour" promptText="Select" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Sub-Category" />
+                              <ComboBox fx:id="comboBoxSubCategoryFour" minWidth="127.0" promptText="Select" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Amount:" />
+                              <TextField fx:id="textFieldAmountFour" minWidth="127.0" promptText="0.00" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Member:" />
+                              <ComboBox fx:id="comboBoxMemberFour" minWidth="127.0" promptText="Select" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <VBox fx:id="boxCancelFour" alignment="CENTER_LEFT" prefWidth="150.0">
+                     <children>
+                        <Label text=" " />
+                        <Button fx:id="buttonCancelSplitFour" minWidth="127.0" mnemonicParsing="false" onAction="#actionCancelSplitFour" text="Cancel Split" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="245.0">
+               <children>
+                  <VBox fx:id="boxSplitFive" alignment="CENTER">
+                     <children>
+                        <Label text=" " />
+                        <Button fx:id="buttonSplitFive" minWidth="127.0" mnemonicParsing="false" onAction="#actionSplitFive" text="Split Receipt" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </VBox>
+                  <HBox fx:id="boxDetailsFive" alignment="CENTER" spacing="5.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Category:" />
+                              <ComboBox fx:id="comboBoxCategoryFive" minWidth="127.0" onAction="#actionCategorySelectFive" promptText="Select" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Sub-Category" />
+                              <ComboBox fx:id="comboBoxSubCategoryFive" minWidth="127.0" promptText="Select" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Amount:" />
+                              <TextField fx:id="textFieldAmountFive" minWidth="127.0" promptText="0.00" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Member:" />
+                              <ComboBox fx:id="comboBoxMemberFive" minWidth="127.0" promptText="Select" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <VBox fx:id="boxCancelFive" alignment="CENTER_LEFT" prefWidth="150.0">
+                     <children>
+                        <Label text=" " />
+                        <Button fx:id="buttonCancelSplitFive" minWidth="127.0" mnemonicParsing="false" onAction="#actionCancelSplitFive" text="Cancel Split" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                     <children>
+                        <Button fx:id="buttonSave" mnemonicParsing="false" onAction="#actionSave" text="Save" />
+                        <Button fx:id="buttonBack" layoutX="353.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionBack" text="Back" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

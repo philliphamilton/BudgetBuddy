@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CategoriesController">
+   <children>
+      <VBox>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" visible="false">
+                     <children>
+                        <Label text="BudgetBuddy" />
+                        <Label text="-" />
+                        <Label text="Categories" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+         <children>
+            <GridPane prefHeight="67.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+              </rowConstraints>
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label text="Categories" />
+                              <Button fx:id="categoriesDeleteButton" mnemonicParsing="false" onAction="#categoriesDeleteButton" text="Delete" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </HBox>
+                        <ListView fx:id="categoriesListView" onKeyPressed="#keyPressed" onMouseClicked="#selectedCategoryAction" onSwipeDown="#selectedCategoryAction" onSwipeUp="#selectedCategoryAction" />
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <TextField fx:id="categoriesTextField" onAction="#actionConfirmCategory" promptText="Enter Category" />
+                              <Button fx:id="addCategoriesButton" mnemonicParsing="false" onAction="#addCategoriesAction" text="Add Category" />
+                           </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                     <children>
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label fx:id="labelSubCatName" />
+                              <Label text="Sub-Categories" />
+                              <Button fx:id="subCategoriesDeleteButton" mnemonicParsing="false" onAction="#subCategoriesDeleteAction" text="Delete" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </HBox>
+                        <ListView fx:id="subCategoriesListView" />
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <TextField fx:id="subCategoriesTextField" onAction="#actionConfirmSubCategory" promptText="Enter Sub-Category" />
+                              <Button fx:id="addSubCategoriesButton" mnemonicParsing="false" onAction="#addSubCategoryAction" text="Add Sub-Category" />
+                           </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin>
+                  </VBox>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#backAction" text="Back" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" visible="false">
+                     <children>
+                        <Label text="BudgetBuddy" />
+                        <Label text="-" />
+                        <Label text="Login" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label disable="true" text="Local Database: " visible="false" />
+                        <Label disable="true" text="?" visible="false" />
+                     </children>
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView cache="true" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@budgetbuddy_icon_login_200x200.png" />
+               </image></ImageView>
+            <Label text="BudgetBuddy Finance Application">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </Label>
+            <Label text="An easy way to keep track of personal monthly expendetures.">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </Label>
+            <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <GridPane maxWidth="425.0" HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                    </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="106.0" spacing="5.0">
+                           <children>
+                              <Button disable="true" mnemonicParsing="false" text="New User" visible="false" />
+                              <Label text="User: ">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1">
+                           <children>
+                              <TextField fx:id="textFieldUsername" promptText="Enter Username">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2">
+                           <children>
+                              <Button fx:id="buttonNewUser" mnemonicParsing="false" onAction="#newUserAction" text="New User">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
+               <children>
+                  <GridPane maxWidth="425.0" HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_RIGHT">
+                           <children>
+                              <Label text="Password: ">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" GridPane.columnIndex="1">
+                           <children>
+                              <PasswordField fx:id="textFieldPassword" promptText="Enter Password">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </PasswordField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2">
+                           <children>
+                              <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#loginAction" text="Login">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="testInfoBox" prefHeight="70.0">
+         <children>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="35.0">
+               <children>
+                  <Label fx:id="labelInstructions" text="To log in with user &quot;test&quot;, please click before. Thank You." />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="35.0" spacing="5.0">
+               <children>
+                  <Button fx:id="buttonTestData" mnemonicParsing="false" onAction="#generateTestDataAction" text="Generate Test User &amp; Data" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

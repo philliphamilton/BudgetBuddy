@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReportsController">
+   <children>
+      <VBox>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" visible="false">
+                     <children>
+                        <Label text="BudgetBuddy" />
+                        <Label text="-" />
+                        <Label text="Reports" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <RadioButton fx:id="radioButtonLocation" mnemonicParsing="false" onAction="#actionLocation" text="Location">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="toggleGroupReport" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButtonCategory" mnemonicParsing="false" onAction="#actionCategory" text="Category" toggleGroup="$toggleGroupReport" />
+                  <RadioButton fx:id="radioButtonMember" mnemonicParsing="false" onAction="#actionMember" text="Member" toggleGroup="$toggleGroupReport" />
+                  <RadioButton fx:id="radioButtonProcurement" mnemonicParsing="false" onAction="#actionProcurement" text="Procurement" toggleGroup="$toggleGroupReport" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="buttonForward" mnemonicParsing="false" onAction="#actionBackward" text="&lt; Backward" />
+                        <Label text="   &lt;----   -   ----" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <children>
+                        <Label text="----   -   ----&gt;   " />
+                        <Button fx:id="buttonForward" mnemonicParsing="false" onAction="#actionForward" text="Forward &gt;" />
+                     </children>
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="----&gt; " />
+                        <Label fx:id="labelMonth" text="Month">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <Label fx:id="labelYear" text="Year">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <Label text=" &lt;----" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TextArea fx:id="reportTextArea" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <VBox>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Button fx:id="buttonReturn" mnemonicParsing="false" onAction="#actionReturn" text="Return" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

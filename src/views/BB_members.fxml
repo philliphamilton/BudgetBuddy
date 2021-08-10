@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MembersController">
+   <children>
+      <VBox>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" visible="false">
+                     <children>
+                        <Label text="BudgetBuddy" />
+                        <Label text="-" />
+                        <Label text="Members" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+         <children>
+            <GridPane prefHeight="263.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+              </rowConstraints>
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Active Members" />
+                        <ListView fx:id="membersListView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </ListView>
+                        <Button fx:id="deleteMembersButton" mnemonicParsing="false" onAction="#deleteMembersAction" text="Delete Member">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <GridPane GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="89.9999720255534" vgrow="ALWAYS" />
+                      <RowConstraints minHeight="10.0" prefHeight="170.66668701171875" vgrow="ALWAYS" />
+                      <RowConstraints minHeight="5.0000152587890625" prefHeight="120.66664632161456" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="Add Member:">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="addMembersTextField" promptText="Enter Member">
+                                 <VBox.margin>
+                                    <Insets right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button fx:id="addMembersButton" mnemonicParsing="false" onAction="#addMembersAction" text="Add" />
+                           </children>
+                        </VBox>
+                        <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <children>
+                              <Button fx:id="backButton" mnemonicParsing="false" onAction="#backAction" text="Back" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" right="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>
